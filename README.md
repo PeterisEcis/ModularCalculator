@@ -8,3 +8,7 @@ Some materials I used are:
  - [How to Make & Use (.dll) files in Visual Studio | Using Class Library](https://www.youtube.com/watch?v=MPOuci-6amQ&ab_channel=TACV-TheAmazingCode-Verse)
 
 I also created 2 git repositories and projects in Visual Studio and pushed them to GitHub. The main project is [Modular Calculator](https://github.com/PeterisEcis/ModularCalculator) and the functions for the calculator will be here [Calculator Functions](https://github.com/PeterisEcis/CalculatorFunctions). 
+
+## Hour 2
+I created 3 branches in Calculator Functions project where there are different compiled dll files. I will use these files to test adding functionality without rebuilding. Also I finished rough version of the GUI for Modular Calculator, written in xaml for WPF.
+After testing I found that I need to find a way to dynamically load dll files, because otherwise even after replacing the dll file it still doesn't change functionality without rebuilding.
