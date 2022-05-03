@@ -1,11 +1,11 @@
 ﻿using System;
-using CalculatorFunctions;
 
 namespace ModularCalculator.Models
 {
     public class CalculationModel
     {
         private string result;
+        private AssemblyManager manager;
 
         public string FirstOperand { get; set; }
         public string SecondOperand { get; set; }
@@ -22,6 +22,7 @@ namespace ModularCalculator.Models
             SecondOperand = secondOperand;
             Operation = operation;
             result = string.Empty;
+            manager = new AssemblyManager();
         }
 
         public CalculationModel(string firstOperand, string operation)
@@ -33,6 +34,8 @@ namespace ModularCalculator.Models
             SecondOperand = string.Empty;
             Operation = operation;
             result = string.Empty;
+            manager = new AssemblyManager();
+
         }
 
         public CalculationModel()
@@ -41,6 +44,12 @@ namespace ModularCalculator.Models
             SecondOperand = string.Empty;
             Operation = string.Empty;
             result = string.Empty;
+            manager = new AssemblyManager();
+        }
+
+        public void UpdateAssembly()
+        {
+            manager.ReloadAssembly();
         }
 
         public void CalculateResult()
@@ -52,19 +61,19 @@ namespace ModularCalculator.Models
                 switch (Operation)
                 {
                     case ("+"):
-                        result = Functions.Add(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Add(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
                         break;
 
                     case ("-"):
-                        result = Functions.Subtract(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Subtract(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
                         break;
 
                     case ("*"):
-                        result = Functions.Multiply(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Multiply(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
                         break;
 
                     case ("/"):
-                        result = Functions.Divide(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Divide(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
                         break;
                 }
             }

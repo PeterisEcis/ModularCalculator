@@ -65,6 +65,13 @@
             FontSize="24"
             FontWeight="Bold" />
         <Button
+            Margin="5"
+            Grid.Row="2"
+            Grid.Column="2"
+            Content="Reload"
+            Command="{Binding ReloadButtonPressCommand}"
+            CommandParameter=""/>
+        <Button
             Grid.Row="2"
             Grid.Column="3"
             Margin="5"

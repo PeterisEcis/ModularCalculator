@@ -10,6 +10,7 @@ namespace ModularCalculator.ViewModels
         private CalculationModel calculation;
         private DelegateCommand<string> digitButtonPressCommand;
         private DelegateCommand<string> operationButtonPressCommand;
+        private DelegateCommand<string> reloadButtonPressCommand;
 
         private string lastOperation;
         private bool newDisplayRequired = false;
@@ -71,6 +72,25 @@ namespace ModularCalculator.ViewModels
             }
         }
 
+        public ICommand ReloadButtonPressCommand
+        {
+            get
+            {
+                if(reloadButtonPressCommand == null)
+                {
+                    reloadButtonPressCommand = new DelegateCommand<string>(
+                        ReloadButtonPress, CanReloadButtonPress);
+                }
+                return reloadButtonPressCommand;
+            }
+        }
+
+        private static bool CanReloadButtonPress(string number)
+        {
+            return true;
+        }
+
+
         public ICommand OperationButtonPressCommand
         {
             get
@@ -107,6 +127,10 @@ namespace ModularCalculator.ViewModels
             return true;
         }
 
+        public void ReloadButtonPress(string button)
+        {
+            calculation.UpdateAssembly();
+        }
 
         //deals with button inputs and sorts out the display accordingly
         public void DigitButtonPress(string button)
