@@ -42,7 +42,7 @@
             Margin="5"
             Grid.Row="1"
             Grid.Column="3"
-            Content="/" FontSize="24" FontWeight="Bold"/>
+            Content="/" FontSize="24" FontWeight="Bold" Click="Button_Click_1"/>
         <Button
             Margin="5"
             Grid.Row="2"
@@ -62,7 +62,7 @@
             Margin="5"
             Grid.Row="2"
             Grid.Column="3"
-            Content="X" FontSize="24" FontWeight="Bold"/>
+            Content="X" FontSize="24" FontWeight="Bold" Click="Button_Click_2"/>
         <Button
             Margin="5"
             Grid.Row="3"
@@ -82,7 +82,7 @@
             Margin="5"
             Grid.Row="3"
             Grid.Column="3"
-            Content="-" FontSize="24" FontWeight="Bold"/>
+            Content="-" FontSize="24" FontWeight="Bold" Click="Button_Click"/>
         <Button
             Margin="5"
             Grid.Row="4"
@@ -102,7 +102,7 @@
             Margin="5"
             Grid.Row="4"
             Grid.Column="3"
-            Content="+" FontSize="24" FontWeight="Bold"/>
+            Content="+" FontSize="24" FontWeight="Bold" Click="Button_Click_3"/>
         <Button
             Margin="5"
             Grid.Row="5"

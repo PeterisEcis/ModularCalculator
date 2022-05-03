@@ -26,9 +26,24 @@ namespace ModularCalculator
             InitializeComponent();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Functions.Divide(10, 0).ToString());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Functions.Multiply(10, 2).ToString());
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Functions.Add(15, 15).ToString());
+            MessageBox.Show(Functions.Subtract(10, 2).ToString());
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Functions.Add(10, 2).ToString());
         }
     }
 }
