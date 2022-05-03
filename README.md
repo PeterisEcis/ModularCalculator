@@ -12,3 +12,8 @@ I also created 2 git repositories and projects in Visual Studio and pushed them 
 ## Hour 2
 I created 3 branches in Calculator Functions project where there are different compiled dll files. I will use these files to test adding functionality without rebuilding. Also I finished rough version of the GUI for Modular Calculator, written in xaml for WPF.
 After testing I found that I need to find a way to dynamically load dll files, because otherwise even after replacing the dll file it still doesn't change functionality without rebuilding.
+
+## Hour 3
+During this time I added MVVM (Model, View, ViewModel) structure with ViewModel file to handle binding data to GUI. I also created CalculationModel class that handles the mathematical functions using previously created CalculatorFunctions dll file. While looking for some info I found this old [wpf-mvvm-calculator](https://github.com/Robert-McGinley/wpf-mvvm-calculator) repository from where I took some parts of code because I thought it would be foolish not to use resources at my disposal. I also started to look on how to dynamically load dll files and I found this resource that might be useful:
+ - [Loading .NET Assemblies out of Seperate Folders](https://weblog.west-wind.com/posts/2016/dec/12/loading-net-assemblies-out-of-seperate-folders)
+
