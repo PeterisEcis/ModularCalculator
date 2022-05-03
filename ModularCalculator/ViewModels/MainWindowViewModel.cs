@@ -172,7 +172,7 @@ namespace ModularCalculator.ViewModels
                     calculation.CalculateResult();
 
                     FullExpression = Math.Round(Convert.ToDouble(FirstOperand), 10) + " " + Operation + " "
-                                    + Math.Round(Convert.ToDouble(SecondOperand), 10) + " = "
+                                    + Math.Round(Convert.ToDouble(SecondOperand), 10) + " =\n"
                                     + Math.Round(Convert.ToDouble(Result), 10);
 
                     LastOperation = operation;
