@@ -60,3 +60,7 @@ I am not sure if I will not delete it so I will just copy a short code fragment 
     }
 ```
 Right now the program won't start so I'm guessing it could be the file path for assembly. 
+
+## Hour 5
+So I got the AssemblyManager to work by using Assembly.Load method instead of Assembly.LoadFile. However, right now I can't replace CalculatorMethods.dll file while the calculator is running. I can replace it after the program is stopped and technically that could work since I can just restart the .exe file without rebuilding, but I will try to make it so that I can reload it while the program is running.
+Before I could get to it, I found some bugs to fix so that calculator can properly convert strings to double with InvariantCulture.
