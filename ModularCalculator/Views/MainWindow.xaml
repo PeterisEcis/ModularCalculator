@@ -1,0 +1,211 @@
+﻿<Window
+    x:Class="ModularCalculator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ModularCalculator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Modular Calculator"
+    Width="300"
+    Height="450"
+    MinWidth="200"
+    MinHeight="300"
+    mc:Ignorable="d">
+
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Margin="5"
+            IsReadOnly="True"
+            Text="{Binding Display, Mode=TwoWay}"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="C"
+            Content="C"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="OrangeRed" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="Del"
+            Content="DEL"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Margin="5"
+            Command="{Binding OperationButtonPressCommand}"
+            CommandParameter="/"
+            Content="/"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="7"
+            Content="7"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="8"
+            Content="8"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="5"            
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="9"
+            Content="9"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Margin="5"
+            Command="{Binding OperationButtonPressCommand}"
+            CommandParameter="*"
+            Content="X"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="5"            
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="4"
+            Content="4"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="5"
+            Content="5"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="6"
+            Content="6"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Margin="5"
+            Command="{Binding OperationButtonPressCommand}"
+            CommandParameter="-"
+            Content="-"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="1"
+            Content="1"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Margin="5"            
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="2"
+            Content="2"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Margin="5"            
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="3"
+            Content="3"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            Margin="5"
+            Command="{Binding OperationButtonPressCommand}"
+            CommandParameter="+"
+            Content="+"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="+/-"
+            Content="+/-"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="0"
+            Content="0"
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Margin="5"
+            Command="{Binding DigitButtonPressCommand}"
+            CommandParameter="."
+            Content="."
+            FontSize="24"
+            FontWeight="Bold" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Margin="5"
+            Command="{Binding OperationButtonPressCommand}"
+            CommandParameter="="
+            Content="="
+            FontSize="24"
+            FontWeight="Bold" />
+    </Grid>
+</Window>
