@@ -32,19 +32,19 @@
             Grid.Row="0"
             Grid.ColumnSpan="4"
             Margin="5"
-            IsReadOnly="True"
-            Text="{Binding FullExpression, Mode=TwoWay}"
             FontSize="20"
             FontWeight="Bold"
-            HorizontalScrollBarVisibility="Auto"/>
+            HorizontalScrollBarVisibility="Auto"
+            IsReadOnly="True"
+            Text="{Binding FullExpression, Mode=TwoWay}" />
         <TextBox
             Grid.Row="1"
             Grid.ColumnSpan="4"
             Margin="5"
-            IsReadOnly="True"
-            Text="{Binding Display, Mode=TwoWay}"
             FontSize="36"
-            FontWeight="Bold" />
+            FontWeight="Bold"
+            IsReadOnly="True"
+            Text="{Binding Display, Mode=TwoWay}" />
         <Button
             Grid.Row="2"
             Grid.Column="0"
@@ -65,12 +65,12 @@
             FontSize="24"
             FontWeight="Bold" />
         <Button
-            Margin="5"
             Grid.Row="2"
             Grid.Column="2"
-            Content="Reload"
+            Margin="5"
             Command="{Binding ReloadButtonPressCommand}"
-            CommandParameter=""/>
+            CommandParameter=""
+            Content="Reload" />
         <Button
             Grid.Row="2"
             Grid.Column="3"
@@ -101,7 +101,7 @@
         <Button
             Grid.Row="3"
             Grid.Column="2"
-            Margin="5"            
+            Margin="5"
             Command="{Binding DigitButtonPressCommand}"
             CommandParameter="9"
             Content="9"
@@ -119,7 +119,7 @@
         <Button
             Grid.Row="4"
             Grid.Column="0"
-            Margin="5"            
+            Margin="5"
             Command="{Binding DigitButtonPressCommand}"
             CommandParameter="4"
             Content="4"
@@ -164,7 +164,7 @@
         <Button
             Grid.Row="5"
             Grid.Column="1"
-            Margin="5"            
+            Margin="5"
             Command="{Binding DigitButtonPressCommand}"
             CommandParameter="2"
             Content="2"
@@ -173,7 +173,7 @@
         <Button
             Grid.Row="5"
             Grid.Column="2"
-            Margin="5"            
+            Margin="5"
             Command="{Binding DigitButtonPressCommand}"
             CommandParameter="3"
             Content="3"
