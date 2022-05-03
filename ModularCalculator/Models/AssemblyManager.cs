@@ -25,63 +25,79 @@ namespace ModularCalculator.Models
 
         }
 
-        public double? Add(double num1, double num2)
+        public string Add(double num1, double num2)
         {
             var info = type.GetMethod(Constants.AddMethod);
             object[] parameters = { num1, num2 };
-            var result = info.Invoke(null, parameters).ToString();
-            if(double.TryParse(result, out double resultDouble))
+            try
             {
-                return resultDouble;
+                var result = info.Invoke(null, parameters);
+                if (result != null)
+                {
+                    return result.ToString();
+                }
+                return "Error";
             }
-            else
+            catch
             {
-                return null;
+                return "Error";
             }
         }
 
-        public double? Subtract(double num1, double num2)
+        public string Subtract(double num1, double num2)
         {
             var info = type.GetMethod(Constants.SubtractMethod);
             object[] parameters = { num1, num2 };
-            var result = info.Invoke(null, parameters).ToString();
-            if (double.TryParse(result, out double resultDouble))
+            try
             {
-                return resultDouble;
+                var result = info.Invoke(null, parameters);
+                if (result != null)
+                {
+                    return result.ToString();
+                }
+                return "Error";
             }
-            else
+            catch
             {
-                return null;
+                return "Error";
             }
         }
 
-        public double? Multiply(double num1, double num2)
+        public string Multiply(double num1, double num2)
         {
             var info = type.GetMethod(Constants.MultiplyMethod);
             object[] parameters = { num1, num2 };
-            var result = info.Invoke(null, parameters).ToString();
-            if (double.TryParse(result, out double resultDouble))
+            try
             {
-                return resultDouble;
+                var result = info.Invoke(null, parameters);
+                if (result != null)
+                {
+                    return result.ToString();
+                }
+                return "Error";
             }
-            else
+            catch
             {
-                return null;
+                return "Error";
             }
         }
 
-        public double? Divide(double num1, double num2)
+        public string Divide(double num1, double num2)
         {
             var info = type.GetMethod(Constants.DivideMethod);
             object[] parameters = { num1, num2 };
-            var result = info.Invoke(null, parameters).ToString();
-            if (double.TryParse(result, out double resultDouble))
+            try
             {
-                return resultDouble;
+                var result = info.Invoke(null, parameters);
+                if (result != null)
+                {
+                    return result.ToString();
+                }
+                return "Error";
             }
-            else
+            catch
             {
-                return null;
+                return "Error";
             }
         }
     }

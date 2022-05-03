@@ -55,25 +55,26 @@ namespace ModularCalculator.Models
         public void CalculateResult()
         {
             ValidateData();
+            var culture = System.Globalization.CultureInfo.InvariantCulture;
 
             try
             {
                 switch (Operation)
                 {
                     case ("+"):
-                        result = manager.Add(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Add(Convert.ToDouble(FirstOperand, culture), Convert.ToDouble(SecondOperand, culture));
                         break;
 
                     case ("-"):
-                        result = manager.Subtract(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Subtract(Convert.ToDouble(FirstOperand, culture), Convert.ToDouble(SecondOperand, culture));
                         break;
 
                     case ("*"):
-                        result = manager.Multiply(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Multiply(Convert.ToDouble(FirstOperand, culture), Convert.ToDouble(SecondOperand, culture));
                         break;
 
                     case ("/"):
-                        result = manager.Divide(Convert.ToDouble(FirstOperand), Convert.ToDouble(SecondOperand)).ToString();
+                        result = manager.Divide(Convert.ToDouble(FirstOperand, culture), Convert.ToDouble(SecondOperand, culture));
                         break;
                 }
             }
@@ -88,7 +89,7 @@ namespace ModularCalculator.Models
         {
             try
             {
-                Convert.ToDouble(operand);
+                Convert.ToDouble(operand, System.Globalization.CultureInfo.InvariantCulture);
             }
             catch (Exception)
             {
