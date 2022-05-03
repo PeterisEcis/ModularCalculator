@@ -17,3 +17,46 @@ After testing I found that I need to find a way to dynamically load dll files, b
 During this time I added MVVM (Model, View, ViewModel) structure with ViewModel file to handle binding data to GUI. I also created CalculationModel class that handles the mathematical functions using previously created CalculatorFunctions dll file. While looking for some info I found this old [wpf-mvvm-calculator](https://github.com/Robert-McGinley/wpf-mvvm-calculator) repository from where I took some parts of code because I thought it would be foolish not to use resources at my disposal. I also started to look on how to dynamically load dll files and I found this resource that might be useful:
  - [Loading .NET Assemblies out of Seperate Folders](https://weblog.west-wind.com/posts/2016/dec/12/loading-net-assemblies-out-of-seperate-folders)
 
+## Hour 4
+Hour 4 was not the most productive or atleast I don't have a lot to show for it. I worked on implementing new class, AssemblyManager that could dynamically load the dll file and read its methods. Some stackoverflow posts that I used:
+- [C# reflection - load assembly and invoke a method if it exists](https://stackoverflow.com/questions/14479074/c-sharp-reflection-load-assembly-and-invoke-a-method-if-it-exists)
+- [Activator and static classes](https://stackoverflow.com/questions/614863/activator-and-static-classes/28611155#28611155)
+- [MethodBase.Invoke Method (MS Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.methodbase.invoke?redirectedfrom=MSDN&view=net-6.0#overloads)
+
+I am not sure if I will not delete it so I will just copy a short code fragment here:
+``` C#
+ public class AssemblyManager
+    {
+        private Assembly assembly;
+        private Type type;
+
+        public AssemblyManager()
+        {
+            assembly = Assembly.LoadFile(Constants.AssemblyFileName); // Constants.AssemblyFileName = "CalculatorFunctions"
+            type = assembly.GetType(Constants.ClassName); //Constants.ClassName = "CalculatorFunctions.Functions"
+        }
+        
+        public void ReloadAssembly()
+        {
+            assembly = Assembly.LoadFile(Constants.AssemblyFileName);
+            type = assembly.GetType(Constants.ClassName);
+
+        }
+
+        public double? Add(double num1, double num2)
+        {
+            var info = type.GetMethod(Constants.AddMethod);
+            object[] parameters = { num1, num2 };
+            var result = info.Invoke(null, parameters).ToString();
+            if(double.TryParse(result, out double resultDouble))
+            {
+                return resultDouble;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+```
+Right now the program won't start so I'm guessing it could be the file path for assembly. 
